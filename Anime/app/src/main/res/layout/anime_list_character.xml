@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -14,7 +14,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/avatars"
+
+            />
+        <TextView
+            android:id="@+id/tv_namachar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_anime_character"
+            android:text="NamaChar"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/tv_seiyuu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_anime_character"
+            android:layout_below="@id/tv_namachar"
+            android:text="Seiyuu"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
             />
 
-    </LinearLayout>
+
+
+
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
