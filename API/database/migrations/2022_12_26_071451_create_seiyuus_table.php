@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('seiyuus', function (Blueprint $table) {
             $table->id();
+            $table->text('foto_seiyuu');
+            $table->string('nama_seiyuu', 50);
             $table->timestamps();
         });
     }

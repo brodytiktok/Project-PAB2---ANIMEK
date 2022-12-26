@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_seiyuu');
+            $table->foreign('id_seiyuu')->references('id')->on('seiyuus')->onDelete('cascade');
+            $table->text('foto_character');
+            $table->string('nama_character');
             $table->timestamps();
         });
     }

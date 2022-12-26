@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('anime_genres', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_anime');
+            $table->unsignedBigInteger('id_genre');
+            $table->foreign('id_anime')->references('id')->on('animes')->onDelete('cascade');
+            $table->foreign('id_genre')->references('id')->on('genres')->onDelete('cascade');
             $table->timestamps();
         });
     }
