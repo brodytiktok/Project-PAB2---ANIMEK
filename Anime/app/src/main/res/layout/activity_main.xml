@@ -7,6 +7,7 @@
     android:padding="8dp"
     tools:context=".MainActivity">
 
+<<<<<<< Updated upstream
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_chat"
         android:layout_width="match_parent"
@@ -75,6 +76,8 @@
         app:layout_constraintTop_toTopOf="parent"
 
         />
+=======
+>>>>>>> Stashed changes
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
