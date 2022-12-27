@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Seiyuus;
 
 class SeiyuuController extends Controller
 {
@@ -14,17 +15,12 @@ class SeiyuuController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $seiyuus = Seiyuus::all();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$seiyuus
+        ]);
     }
 
     /**
@@ -35,7 +31,15 @@ class SeiyuuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $seiyuus = new Seiyuus;
+        $seiyuus->foto_seiyuu = $request->foto_seiyuu;
+        $seiyuus->nama_seiyuu = $request->nama_seiyuu;
+        $seiyuus->save();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$seiyuus
+        ]);
     }
 
     /**
@@ -46,18 +50,12 @@ class SeiyuuController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $seiyuus = Seiyuus::find($id);
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$seiyuus
+        ]);
     }
 
     /**
@@ -69,7 +67,15 @@ class SeiyuuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $seiyuus = Seiyuus::find($id);
+        $seiyuus->foto_seiyuu = $request->foto_seiyuu;
+        $seiyuus->nama_seiyuu = $request->nama_seiyuu;
+        $seiyuus->save();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$seiyuus
+        ]);
     }
 
     /**
@@ -80,6 +86,11 @@ class SeiyuuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $seiyuus = Seiyuus::find($id);
+        $seiyuus->delete();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+        ]);
     }
 }

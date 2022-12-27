@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Genres;
 
 class GenreController extends Controller
 {
@@ -14,18 +15,14 @@ class GenreController extends Controller
      */
     public function index()
     {
-        //
+        $genres = genres::all();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$genres
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +32,14 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $genres = new genres;
+        $genres->nama_genre = $request->nama_genre;
+        $genres->save();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$genres
+        ]);
     }
 
     /**
@@ -46,19 +50,14 @@ class GenreController extends Controller
      */
     public function show($id)
     {
-        //
+        $genres = genres::find($id);
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$genres
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +68,14 @@ class GenreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $genres = genres::find($id);
+        $genres->nama_genre = $request->nama_genre;
+        $genres->save();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$genres
+        ]);
     }
 
     /**
@@ -80,6 +86,11 @@ class GenreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $genres = genres::find($id);
+        $genres->delete();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+        ]);
     }
 }
