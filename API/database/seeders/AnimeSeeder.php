@@ -34,7 +34,7 @@ class AnimeSeeder extends Seeder
         ]);
 
         DB::table('animes')->insert([
-            'foto-anime'=>'',
+            'foto_anime'=>'',
             'judul_anime'=>'',
             'deskripsi_anime'=>"",
         ]);

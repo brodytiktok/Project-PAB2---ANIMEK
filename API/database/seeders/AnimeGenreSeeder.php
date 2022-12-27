@@ -15,9 +15,9 @@ class AnimeGenreSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('anime_genres')->insert([
-            'id_anime'=>'',
-            'id_genre'=>'',
-        ]);
+        // DB::table('anime_genres')->insert([
+        //     'id_anime'=>3,
+        //     'id_genre'=>2,
+        // ]);
     }
 }
