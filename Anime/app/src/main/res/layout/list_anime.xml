@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools">
     <ImageView
-        android:id="@+id/iv_character"
+        android:id="@+id/iv_anime"
         android:layout_width="65dp"
         android:layout_height="99dp"
         tools:srcCompat="@tools:sample/avatars"/>
@@ -12,11 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_toRightOf="@+id/iv_character">
+        android:layout_toRightOf="@+id/iv_anime">
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_tanime"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            
+            android:text="Title Anime"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dp"
+            android:gravity="center"
             />
     </LinearLayout>
 
