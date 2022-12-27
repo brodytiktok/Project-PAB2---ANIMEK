@@ -1,4 +1,4 @@
-package com.example.anime;
+package com.example.anime.models;
 
 public class User {
     private  String email;

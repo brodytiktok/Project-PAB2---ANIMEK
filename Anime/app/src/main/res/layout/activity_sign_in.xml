@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".SignInActivity">
 
     <LinearLayout
-        android:id="@+id/ll_signup"
+        android:id="@+id/ll_signin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -48,42 +48,23 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/et_confirm_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Confirm Password"
-                android:inputType="textPassword"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/et_fullname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Full Name"
-                android:inputType="textPersonName"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
-            android:id="@+id/btn_signup"
+            android:id="@+id/btn_signin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/purple_500"
             android:textColor="@android:color/white"
-            android:text="Sign Up"
+            android:text="Sign In"
             android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btn_signup"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not a member? Get registered in Chat Together now!"
+            android:textAllCaps="false"
+            android:layout_gravity="center_horizontal"/>
 
         <Button
             android:id="@+id/btn_resetpassword"
@@ -94,22 +75,12 @@
             android:textAllCaps="false"
             android:layout_gravity="center_horizontal"/>
 
-        <Button
-            android:id="@+id/btn_signin"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Already registered. Login Me!"
-            android:textAllCaps="false"
-            android:layout_gravity="center_horizontal"/>
-
     </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ll_signup"
+        android:layout_below="@+id/ll_signin"
         android:layout_centerHorizontal="true"/>
-
 </RelativeLayout>
