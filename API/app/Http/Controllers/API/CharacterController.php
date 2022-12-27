@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Characters;
 
 class CharacterController extends Controller
 {
@@ -14,18 +15,14 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        //
+        $characters = Characters::all();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$characters
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +32,16 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $characters = new Characters;
+        $characters->id_seiyuu = $request->id_seiyuu;
+        $characters->foto_character = $request->foto_character;
+        $characters->nama_character = $request->nama_character;
+        $characters->save();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$characters
+        ]);
     }
 
     /**
@@ -46,20 +52,15 @@ class CharacterController extends Controller
      */
     public function show($id)
     {
-        //
+        $characters = Characters::find($id);
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$characters
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
+   
     /**
      * Update the specified resource in storage.
      *
@@ -69,7 +70,17 @@ class CharacterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $characters = Characters::find($id);
+        $characters->id_seiyuu = $request->id_seiyuu;
+        $characters->foto_character = $request->foto_character;
+        $characters->nama_character = $request->nama_character;
+        $characters->save();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$characters
+        ]);
+
     }
 
     /**
@@ -80,6 +91,11 @@ class CharacterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $characters = Characters::find($id);
+        $characters->delete();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+        ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Anime_genres;
 
 class AnimeGenreController extends Controller
 {
@@ -14,17 +15,12 @@ class AnimeGenreController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $animegenres = Anime_genres::all();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$animegenres
+        ]);
     }
 
     /**
@@ -35,7 +31,15 @@ class AnimeGenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $animegenres = new Anime_genres;
+        $animegenres->id_anime = $request->id_anime;
+        $animegenres->id_genre = $request->id_genre;
+        $animegenres->save();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$animegenres
+        ]);
     }
 
     /**
@@ -46,19 +50,14 @@ class AnimeGenreController extends Controller
      */
     public function show($id)
     {
-        //
+        $animegenres = Anime_genres::find($id);
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$animegenres
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +68,15 @@ class AnimeGenreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $animegenres = Anime_genres::find($id);
+        $animegenres->id_anime = $request->id_anime;
+        $animegenres->id_genre = $request->id_genre;
+        $animegenres->save();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+            'data'=>$animegenres
+        ]);
     }
 
     /**
@@ -80,6 +87,11 @@ class AnimeGenreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $animegenres = Anime_genres::find($id);
+        $animegenres->delete();
+        return response()->json([
+            'status'=>200,
+            'pesan'=>'berhasil',
+        ]);
     }
 }
