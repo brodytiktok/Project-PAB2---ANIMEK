@@ -6,15 +6,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.CardViewHolder> {
+public class AdapterCharacters extends RecyclerView.Adapter<AdapterCharacters.CardViewHolder> {
+
     @NonNull
     @Override
-    public AdapterAnime.CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterCharacters.CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return null;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterAnime.CardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterCharacters.CardViewHolder holder, int position) {
 
     }
 
