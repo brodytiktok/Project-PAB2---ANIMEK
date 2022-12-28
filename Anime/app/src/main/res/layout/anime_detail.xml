@@ -33,6 +33,29 @@
         android:text="Anime Name"
         android:textSize="15dp" />
 
+    <!--Gerne Anime-->
+    <TextView
+        android:id="@+id/tilGerne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:text="Gerne"
+        android:textSize="12dp"/>
+    <TextView
+        android:id="@+id/tv_gerne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Isi Gerne Anime"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:textSize="8dp"
+        android:padding="5dp"
+        />
+
     <!--Deskripsi Anime-->
     <TextView
         android:id="@+id/tilDescs"
