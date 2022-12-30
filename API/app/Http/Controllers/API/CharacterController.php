@@ -15,14 +15,28 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        $characters = Characters::all();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$characters
-        ]);
+        try {
+            $characters = Characters::all();
+            if($characters){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$characters
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -32,16 +46,32 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
-        $characters = new Characters;
-        $characters->id_seiyuu = $request->id_seiyuu;
-        $characters->foto_character = $request->foto_character;
-        $characters->nama_character = $request->nama_character;
-        $characters->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$characters
-        ]);
+        try {
+            $characters = new Characters;
+            $characters->id_seiyuu = $request->id_seiyuu;
+            $characters->foto_character = $request->foto_character;
+            $characters->nama_character = $request->nama_character;
+            $characters->save();
+            if($characters){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$characters
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -53,14 +83,21 @@ class CharacterController extends Controller
     public function show($id)
     {
         $characters = Characters::find($id);
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$characters
-        ]);
+        if($characters){
+            return response()->json([
+                'status'=>200,
+                'pesan'=>'berhasil',
+                'data'=>$characters
+            ]);
+        }
+        else{
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
-   
     /**
      * Update the specified resource in storage.
      *
@@ -70,17 +107,32 @@ class CharacterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $characters = Characters::find($id);
-        $characters->id_seiyuu = $request->id_seiyuu;
-        $characters->foto_character = $request->foto_character;
-        $characters->nama_character = $request->nama_character;
-        $characters->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$characters
-        ]);
-
+        try {
+            $characters = Characters::find($id);
+            if($characters){
+                $characters->id_seiyuu = $request->id_seiyuu;
+                $characters->foto_character = $request->foto_character;
+                $characters->nama_character = $request->nama_character;
+                $characters->save();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$characters
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -91,11 +143,26 @@ class CharacterController extends Controller
      */
     public function destroy($id)
     {
-        $characters = Characters::find($id);
-        $characters->delete();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-        ]);
+        try {
+            $characters = Characters::find($id);
+            if($characters){
+                $characters->delete();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 }

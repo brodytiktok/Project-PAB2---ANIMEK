@@ -15,12 +15,27 @@ class AnimeGenreController extends Controller
      */
     public function index()
     {
-        $animegenres = Anime_genres::all();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$animegenres
-        ]);
+        try {
+            $animegenres = Anime_Genres::all();
+            if($animegenres){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$animegenres
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -31,15 +46,30 @@ class AnimeGenreController extends Controller
      */
     public function store(Request $request)
     {
-        $animegenres = new Anime_genres;
-        $animegenres->id_anime = $request->id_anime;
-        $animegenres->id_genre = $request->id_genre;
-        $animegenres->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$animegenres
-        ]);
+        try {
+            $animegenres = new Anime_genres;
+            $animegenres->id_anime = $request->id_anime;
+            $animegenres->id_genre = $request->id_genre;
+            $animegenres->save();
+            if($animegenres){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$animegenres
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -50,12 +80,20 @@ class AnimeGenreController extends Controller
      */
     public function show($id)
     {
-        $animegenres = Anime_genres::find($id);
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$animegenres
-        ]);
+        $animegenres = Anime_Genres::find($id);
+        if($animegenres){
+            return response()->json([
+                'status'=>200,
+                'pesan'=>'berhasil',
+                'data'=>$animegenres
+            ]);
+        }
+        else{
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
 
@@ -68,15 +106,30 @@ class AnimeGenreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $animegenres = Anime_genres::find($id);
-        $animegenres->id_anime = $request->id_anime;
-        $animegenres->id_genre = $request->id_genre;
-        $animegenres->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$animegenres
-        ]);
+        try {
+            $animegenres = Anime_genres::find($id);
+            if($animegenres){
+                $animegenres->id_anime = $request->id_anime;
+                $animegenres->id_genre = $request->id_genre;
+                $animegenres->save();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$animegenres
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -87,11 +140,26 @@ class AnimeGenreController extends Controller
      */
     public function destroy($id)
     {
-        $animegenres = Anime_genres::find($id);
-        $animegenres->delete();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-        ]);
+        try {
+            $animegenres = Anime_genres::find($id);
+            if($animegenres){
+                $animegenres->delete();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 }

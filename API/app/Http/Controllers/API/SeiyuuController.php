@@ -15,12 +15,27 @@ class SeiyuuController extends Controller
      */
     public function index()
     {
-        $seiyuus = Seiyuus::all();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$seiyuus
-        ]);
+        try {
+            $seiyuus = Seiyuus::all();
+            if($seiyuus){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$seiyuus
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -31,15 +46,31 @@ class SeiyuuController extends Controller
      */
     public function store(Request $request)
     {
-        $seiyuus = new Seiyuus;
-        $seiyuus->foto_seiyuu = $request->foto_seiyuu;
-        $seiyuus->nama_seiyuu = $request->nama_seiyuu;
-        $seiyuus->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$seiyuus
-        ]);
+        try {
+            $seiyuus = new Seiyuus;
+            $seiyuus->foto_seiyuu = $request->foto_seiyuu;
+            $seiyuus->nama_seiyuu = $request->nama_seiyuu;
+            $seiyuus->save();
+            if($seiyuus){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$seiyuus
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -51,11 +82,19 @@ class SeiyuuController extends Controller
     public function show($id)
     {
         $seiyuus = Seiyuus::find($id);
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$seiyuus
-        ]);
+        if($seiyuus){
+            return response()->json([
+                'status'=>200,
+                'pesan'=>'berhasil',
+                'data'=>$seiyuus
+            ]);
+        }
+        else{
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -67,15 +106,31 @@ class SeiyuuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $seiyuus = Seiyuus::find($id);
-        $seiyuus->foto_seiyuu = $request->foto_seiyuu;
-        $seiyuus->nama_seiyuu = $request->nama_seiyuu;
-        $seiyuus->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$seiyuus
-        ]);
+        try {
+            $seiyuus = Seiyuus::find($id);
+            if($seiyuus){
+                $seiyuus->foto_seiyuu = $request->foto_seiyuu;
+                $seiyuus->nama_seiyuu = $request->nama_seiyuu;
+                $seiyuus->save();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$seiyuus
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -86,11 +141,26 @@ class SeiyuuController extends Controller
      */
     public function destroy($id)
     {
-        $seiyuus = Seiyuus::find($id);
-        $seiyuus->delete();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-        ]);
+        try {
+            $seiyuus = Seiyuus::find($id);
+            if($seiyuus){
+                $seiyuus->delete();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 }

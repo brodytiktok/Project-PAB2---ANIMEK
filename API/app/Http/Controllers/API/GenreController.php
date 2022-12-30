@@ -15,14 +15,28 @@ class GenreController extends Controller
      */
     public function index()
     {
-        $genres = genres::all();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$genres
-        ]);
+        try {
+            $genres = Genres::all();
+            if($genres){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$genres
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -32,14 +46,30 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        $genres = new genres;
-        $genres->nama_genre = $request->nama_genre;
-        $genres->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$genres
-        ]);
+        try {
+            $genres = new Genres;
+            $genres->nama_genre = $request->nama_genre;
+            $genres->save();
+            if($genres){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$genres
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -50,14 +80,21 @@ class GenreController extends Controller
      */
     public function show($id)
     {
-        $genres = genres::find($id);
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$genres
-        ]);
+        $genres = Genres::find($id);
+        if($genres){
+            return response()->json([
+                'status'=>200,
+                'pesan'=>'berhasil',
+                'data'=>$genres
+            ]);
+        }
+        else{
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -68,14 +105,30 @@ class GenreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $genres = genres::find($id);
-        $genres->nama_genre = $request->nama_genre;
-        $genres->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$genres
-        ]);
+        try {
+            $genres = Genres::find($id);
+            if($genres){
+                $genres->nama_genre = $request->nama_genre;
+                $genres->save();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$genres
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -86,11 +139,26 @@ class GenreController extends Controller
      */
     public function destroy($id)
     {
-        $genres = genres::find($id);
-        $genres->delete();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-        ]);
+        try {
+            $genres = Genres::find($id);
+            if($genres){
+                $genres->delete();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 }
