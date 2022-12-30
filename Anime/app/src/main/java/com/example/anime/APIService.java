@@ -41,6 +41,8 @@ public interface APIService {
     @GET("anime/{id}/delete")
     Call<APIResponse<List<Anime>>> deleteAnime(@Path("id") long id);
 
+
+
     @GET("genre")
     Call<APIResponse<List<Anime>>> getAllGenre();
 
@@ -57,5 +59,28 @@ public interface APIService {
 
     @GET("genre/{id}/delete")
     Call<APIResponse<List<Anime>>> deleteGenre(@Path("id") long id);
+
+
+
+    @GET("seiyuu")
+    Call<APIResponse<List<Anime>>> getAllSeiyuu();
+
+    @POST("seiyuu")
+    @FormUrlEncoded
+    Call<APIResponse<Anime>> createSeiyuu(@Field("foto_seiyuu") String foto_seiyuu,
+                                         @Field("nama_seiyuu") String nama_seiyuu);
+
+    @GET("seiyuu/{id}")
+    Call<APIResponse<List<Anime>>> showSeiyuu(@Path("id") long id);
+
+    @POST("seiyuu/{id}/update")
+    @FormUrlEncoded
+    Call<APIResponse<Anime>> updateSeiyuu(@Field("foto_seiyuu") String foto_seiyuu,
+                                         @Field("nama_seiyuu") String nama_seiyuu);
+
+    @GET("seiyuu/{id}/delete")
+    Call<APIResponse<List<Anime>>> deleteSeiyuu(@Path("id") long id);
+
+
 
 }
