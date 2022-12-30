@@ -21,6 +21,6 @@ public class Anime_Detail extends AppCompatActivity {
         tvDesc = findViewById(R.id.tv_desc);
 
         Intent terima = getIntent();
-        String judul_anime = terima.getDataString("varTitleAnime");
+//        String judul_anime = terima.getDataString("varTitleAnime");
     }
 }
