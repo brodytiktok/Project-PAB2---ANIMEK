@@ -81,7 +81,8 @@ class AnimeGenreController extends Controller
      */
     public function show($id)
     {
-        $animegenres = DB::select('select * FROM anime_genres
+        $animegenres = DB::select('select genres.nama_genre as nama_genre 
+        FROM anime_genres
         INNER JOIN genres ON anime_genres.id_genres = genres.id
         WHERE anime_genres.id_anime = ?', [$id]);
         if($animegenres){

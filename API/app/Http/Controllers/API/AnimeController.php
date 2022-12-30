@@ -93,7 +93,9 @@ class AnimeController extends Controller
             return response()->json([
                 'status'=>200,
                 'pesan'=>'berhasil',
-                'data'=>[$animes, $characters]
+                'data'=>[
+                    'animes' => $animes,
+                    'characters' => $characters]
             ]);
         }
         else{
