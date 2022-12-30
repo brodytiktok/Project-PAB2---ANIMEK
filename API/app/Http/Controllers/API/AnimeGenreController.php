@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Anime_genres;
+use DB;
 
 class AnimeGenreController extends Controller
 {
@@ -80,7 +81,9 @@ class AnimeGenreController extends Controller
      */
     public function show($id)
     {
-        $animegenres = Anime_Genres::find($id);
+        $animegenres = DB::select('select * FROM anime_genres
+        INNER JOIN genres ON anime_genres.id_genres = genres.id
+        WHERE anime_genres.id_anime = ?', [$id]);
         if($animegenres){
             return response()->json([
                 'status'=>200,

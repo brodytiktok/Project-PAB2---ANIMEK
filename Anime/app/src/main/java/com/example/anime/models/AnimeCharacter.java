@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Character implements Parcelable {
+public class AnimeCharacter implements Parcelable {
     @SerializedName("id")
     private long id;
 
@@ -18,22 +18,22 @@ public class Character implements Parcelable {
     @SerializedName("nama_character")
     private String nama_character;
 
-    protected Character(Parcel in) {
+    protected AnimeCharacter(Parcel in) {
         id = in.readLong();
         id_seiyuu = in.readLong();
         foto_seiyuu = in.readString();
         nama_character = in.readString();
     }
 
-    public static final Creator<Character> CREATOR = new Creator<Character>() {
+    public static final Creator<AnimeCharacter> CREATOR = new Creator<AnimeCharacter>() {
         @Override
-        public Character createFromParcel(Parcel in) {
-            return new Character(in);
+        public AnimeCharacter createFromParcel(Parcel in) {
+            return new AnimeCharacter(in);
         }
 
         @Override
-        public Character[] newArray(int size) {
-            return new Character[size];
+        public AnimeCharacter[] newArray(int size) {
+            return new AnimeCharacter[size];
         }
     };
 
@@ -82,10 +82,10 @@ public class Character implements Parcelable {
         this.nama_character = nama_character;
     }
 
-    public Character() {
+    public AnimeCharacter() {
     }
 
-    public Character(long id, long id_seiyuu, String foto_seiyuu, String nama_character) {
+    public AnimeCharacter(long id, long id_seiyuu, String foto_seiyuu, String nama_character) {
         this.id = id;
         this.id_seiyuu = id_seiyuu;
         this.foto_seiyuu = foto_seiyuu;

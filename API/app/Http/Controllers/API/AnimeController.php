@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Animes;
+use DB;
 
 class AnimeController extends Controller
 {
@@ -83,11 +84,16 @@ class AnimeController extends Controller
     public function show($id)
     {
         $animes = Animes::find($id);
+        $characters = DB::select('select characters.nama_character, characters.foto_character
+        , seiyuus.nama_seiyuu, seiyuus.foto_seiyuu FROM animes 
+        INNER JOIN characters ON characters.id_anime = animes.id
+        INNER JOIN seiyuus ON seiyuus.id = characters.id_seiyuu
+        WHERE animes.id = ?',[$id]);
         if($animes){
             return response()->json([
                 'status'=>200,
                 'pesan'=>'berhasil',
-                'data'=>$animes
+                'data'=>[$animes, $characters]
             ]);
         }
         else{
