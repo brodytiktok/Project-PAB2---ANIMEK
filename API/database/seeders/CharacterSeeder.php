@@ -189,43 +189,43 @@ class CharacterSeeder extends Seeder
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/16/480331.jpg',
+            'nama_character'=>'Haku',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/16/64987.jpg',
+            'nama_character'=>'Kaonashi',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/9/312302.jpg',
+            'nama_character'=>'Joutarou Kuujou',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/8/476401.jpg',
+            'nama_character'=>'Jolyne Kuujou',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/8/390366.jpg',
+            'nama_character'=>'Enrico Pucci',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/4/489561.jpg',
+            'nama_character'=>'Makima',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/7/494969.jpg',
+            'nama_character'=>'Power',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/3/492407.jpg',
+            'nama_character'=>'Denji',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
