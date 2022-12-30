@@ -221,15 +221,25 @@ class AnimeSeeder extends Seeder
         ]);
 
         DB::table('animes')->insert([
-            'foto_anime'=>'',
-            'judul_anime'=>'',
-            'deskripsi_anime'=>"",
+            'foto_anime'=>'https://cdn.myanimelist.net/images/anime/6/86733.jpg',
+            'judul_anime'=>'Made in Abyss',
+            'deskripsi_anime'=>"The Abyss—a gaping chasm stretching down into the depths of the earth, filled with mysterious creatures and relics from a time long past. How did it come to be? What lies at the bottom? Countless brave individuals, known as Divers, have sought to solve these mysteries of the Abyss, fearlessly descending into its darkest realms. The best and bravest of the Divers, the White Whistles, are hailed as legends by those who remain on the surface.
+            \n\n
+            Riko, daughter of the missing White Whistle Lyza the Annihilator, aspires to become like her mother and explore the furthest reaches of the Abyss. However, just a novice Red Whistle herself, she is only permitted to roam its most upper layer. Even so, Riko has a chance encounter with a mysterious robot with the appearance of an ordinary young boy. She comes to name him Reg, and he has no recollection of the events preceding his discovery. Certain that the technology to create Reg must come from deep within the Abyss, the two decide to venture forth into the chasm to recover his memories and see the bottom of the great pit with their own eyes. However, they know not of the harsh reality that is the true existence of the Abyss.",
         ]);
 
         DB::table('animes')->insert([
-            'foto_anime'=>'',
-            'judul_anime'=>'',
-            'deskripsi_anime'=>"",
+            'foto_anime'=>'https://cdn.myanimelist.net/images/anime/2/73862.jpg',
+            'judul_anime'=>'Mushishi',
+            'deskripsi_anime'=>"\"Mushi\": the most basic forms of life in the world. They exist without any goals or purposes aside from simply \"being.\" They are beyond the shackles of the words \"good\" and \"evil.\" Mushi can exist in countless forms and are capable of mimicking things from the natural world such as plants, diseases, and even phenomena like rainbows.
+            \n\n
+            This is, however, just a vague definition of these entities that inhabit the vibrant world of Mushishi, as to even call them a form of life would be an oversimplification. Detailed information on Mushi is scarce because the majority of humans are unaware of their existence.
+            \n\n
+            So what are Mushi and why do they exist? This is the question that a \"Mushishi,\" Ginko, ponders constantly. Mushishi are those who research Mushi in hopes of understanding their place in the world's hierarchy of life.
+            \n\n
+            Ginko chases rumors of occurrences that could be tied to Mushi, all for the sake of finding an answer.
+            \n\n
+            It could, after all, lead to the meaning of life itself.",
         ]);
 
         DB::table('animes')->insert([
