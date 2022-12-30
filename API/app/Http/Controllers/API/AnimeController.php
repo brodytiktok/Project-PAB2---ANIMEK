@@ -15,12 +15,27 @@ class AnimeController extends Controller
      */
     public function index()
     {
-        $animes = Animes::all();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$animes
-        ]);
+        try {
+            $animes = Animes::all();
+            if($animes){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$animes
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -31,16 +46,32 @@ class AnimeController extends Controller
      */
     public function store(Request $request)
     {
-        $animes = new Animes;
-        $animes->foto_anime = $request->foto_anime;
-        $animes->judul_anime = $request->judul_anime;
-        $animes->deskripsi_anime = $request->deskripsi_anime;
-        $animes->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$animes
-        ]);
+        try {
+            $animes = new Animes;
+            $animes->foto_anime = $request->foto_anime;
+            $animes->judul_anime = $request->judul_anime;
+            $animes->deskripsi_anime = $request->deskripsi_anime;
+            $animes->save();
+            if($animes){
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$animes
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -52,11 +83,19 @@ class AnimeController extends Controller
     public function show($id)
     {
         $animes = Animes::find($id);
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$animes
-        ]);
+        if($animes){
+            return response()->json([
+                'status'=>200,
+                'pesan'=>'berhasil',
+                'data'=>$animes
+            ]);
+        }
+        else{
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -68,16 +107,32 @@ class AnimeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $animes = Animes::find($id);
-        $animes->foto_anime = $request->foto_anime;
-        $animes->judul_anime = $request->judul_anime;
-        $animes->deskripsi_anime = $request->deskripsi_anime;
-        $animes->save();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-            'data'=>$animes
-        ]);
+        try {
+            $animes = Animes::find($id);
+            if($animes){
+                $animes->foto_anime = $request->foto_anime;
+                $animes->judul_anime = $request->judul_anime;
+                $animes->deskripsi_anime = $request->deskripsi_anime;
+                $animes->save();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                    'data'=>$animes
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 
     /**
@@ -88,11 +143,26 @@ class AnimeController extends Controller
      */
     public function destroy($id)
     {
-        $animes = Animes::find($id);
-        $animes->delete();
-        return response()->json([
-            'status'=>200,
-            'pesan'=>'berhasil',
-        ]);
+        try {
+            $animes = Animes::find($id);
+            if($animes){
+                $animes->delete();
+                return response()->json([
+                    'status'=>200,
+                    'pesan'=>'berhasil',
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status'=>400,
+                    'pesan'=>'gagal',
+                ],400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'status'=>400,
+                'pesan'=>'gagal',
+            ],400);
+        }
     }
 }

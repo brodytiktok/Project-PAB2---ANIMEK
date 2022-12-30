@@ -16,7 +16,7 @@ class CharacterSeeder extends Seeder
     public function run()
     {
         DB::table('characters')->insert([
-            'id_seiyuu'=>'',
+            //'id_seiyuu'=>,
             'foto_character'=>'',
             'nama_character'=>'',
         ]);
