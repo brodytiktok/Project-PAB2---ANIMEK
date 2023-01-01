@@ -229,89 +229,184 @@ class CharacterSeeder extends Seeder
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/4/50197.jpg',
+            'nama_character'=>'Spike Spiegel',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/15/264961.jpg',
+            'nama_character'=>'Faye Valentine',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/16/30533.jpg',
+            'nama_character'=>'Edward Wong Hau Pepelu Tivrusky IV',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/11/32678.jpg',
+            'nama_character'=>'Ippo Makunouchi',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/13/229037.jpg',
+            'nama_character'=>'Mamoru Takamura',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/12/145319.jpg',
+            'nama_character'=>'Masaru Aoki',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/14/401940.jpg',
+            'nama_character'=>'Askeladd',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/9/309871.jpg',
+            'nama_character'=>'Thorfinn',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/2/395761.jpg',
+            'nama_character'=>'Canute',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/6/348746.jpg',
+            'nama_character'=>'Yakumo Yuurakutei',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/12/276152.jpg',
+            'nama_character'=>'Yotarou',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/6/301594.jpg',
+            'nama_character'=>'Sukeroku Yuurakutei',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/9/328207.jpg',
+            'nama_character'=>'Joe Yabuki',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/4/126741.jpg',
+            'nama_character'=>'Danpei Tange',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/5/264537.jpg',
+            'nama_character'=>'Yoko Shiraki',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/7/429765.jpg',
+            'nama_character'=>'Hiroshi Odokawa',
         ]);
         DB::table('characters')->insert([
             //'id_seiyuu'=>
-            'foto_character'=>'',
-            'nama_character'=>'',
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/15/429792.jpg',
+            'nama_character'=>'Yano',
         ]);
-
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/15/429790.jpg',
+            'nama_character'=>'Hajime Tanaka',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/4/457933.jpg',
+            'nama_character'=>'Anya Forger',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/11/457934.jpg',
+            'nama_character'=>'Yor Forger',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/2/457747.jpg',
+            'nama_character'=>'Loid Forger',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/8/241475.jpg',
+            'nama_character'=>'Eikichi Onizuka',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/15/113918.jpg',
+            'nama_character'=>'Urumi Kanzaki',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/5/51230.jpg',
+            'nama_character'=>'Hiroshi Uchiyamada',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/9/310307.jpg',
+            'nama_character'=>'Luffy Monkey D.',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/3/100534.jpg',
+            'nama_character'=>'Zoro Roronoa',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/5/136769.jpg',
+            'nama_character'=>'Sanji',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/4/326001.jpg',
+            'nama_character'=>'Reg',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/4/326000.jpg',
+            'nama_character'=>'Riko',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/10/350283.jpg',
+            'nama_character'=>'Nanachi',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/14/303453.jpg',
+            'nama_character'=>'Ginko',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/14/249719.jpg',
+            'nama_character'=>'Tanyuu Karibusa',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/16/58434.jpg',
+            'nama_character'=>'Nui',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/15/422168.jpg',
+            'nama_character'=>'Satoru Gojou',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/11/427601.jpg',
+            'nama_character'=>'Yuuji Itadori',
+        ]);
+        DB::table('characters')->insert([
+            //'id_seiyuu'=>
+            'foto_character'=>'https://cdn.myanimelist.net/images/characters/6/431152.jpg',
+            'nama_character'=>'Sukuna Ryoumen',
+        ]);
+        
     }
 }
