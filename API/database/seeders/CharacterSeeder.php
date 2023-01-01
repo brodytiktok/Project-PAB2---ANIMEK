@@ -20,7 +20,6 @@ class CharacterSeeder extends Seeder
             'foto_character'=>'https://cdn.myanimelist.net/images/characters/9/72533.jpg',
             'nama_character'=>'Edward Elric',
         ]);
-
         DB::table('characters')->insert([
             //'id_seiyuu'=>,
             'foto_character'=>'https://cdn.myanimelist.net/images/characters/5/54265.jpg',
@@ -31,7 +30,6 @@ class CharacterSeeder extends Seeder
             'foto_character'=>'https://cdn.myanimelist.net/images/characters/7/72983.jpg',
             'nama_character'=>'Roy Mustang',
         ]);
-
         DB::table('characters')->insert([
             //'id_seiyuu'=>
             'foto_character'=>'https://cdn.myanimelist.net/images/characters/11/294388.jpg',
@@ -407,6 +405,5 @@ class CharacterSeeder extends Seeder
             'foto_character'=>'https://cdn.myanimelist.net/images/characters/6/431152.jpg',
             'nama_character'=>'Sukuna Ryoumen',
         ]);
-        
     }
 }
