@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AnimeDetail"
+    android:orientation="vertical">
+    <!--Foto Anime-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/iv_anime"
+            android:layout_width="106dp"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <!--Judul Anime-->
+    <TextView
+        android:id="@+id/tv_tanime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Anime Name"
+        android:textSize="15dp" />
+
+    <!--Gerne Anime-->
+    <TextView
+        android:id="@+id/tilGerne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:text="Gerne"
+        android:textSize="12dp"/>
+    <TextView
+        android:id="@+id/tv_gerne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Isi Gerne Anime"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:textSize="8dp"
+        android:padding="5dp"
+        />
+
+    <!--Deskripsi Anime-->
+    <TextView
+        android:id="@+id/tilDescs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:text="Deskripsi"
+        android:textSize="12dp"/>
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Isi Deskripsi Anime"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:textSize="8dp"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tilcharacters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:text="Characters"
+        android:textSize="12dp"/>
+    <!--List Karakter Anime-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_characters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        tools:listitem="@layout/list_character"/>
+</LinearLayout>
