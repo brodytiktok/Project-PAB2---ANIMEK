@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             AnimeSeeder::class,
-            AnimeGenreSeeder::class,
-            CharacterSeeder::class,
             GenreSeeder::class,
             SeiyuuSeeder::class,
+            AnimeGenreSeeder::class,
+            CharacterSeeder::class,
         ]);
     }
 }
