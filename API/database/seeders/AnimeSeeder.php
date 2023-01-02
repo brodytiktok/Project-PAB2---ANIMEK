@@ -243,12 +243,6 @@ class AnimeSeeder extends Seeder
         ]);
 
         DB::table('animes')->insert([//26
-            'foto_anime'=>'https://cdn.myanimelist.net/images/anime/8/56617.jpg',
-            'judul_anime'=>'Hajime no Ippo: New Challenger',
-            'deskripsi_anime'=>"Japanese Featherweight Champion Ippo Makunouchi has successfully defended and retained his title. Meanwhile, his rival, Ichirou Miyata, has resurfaced in Japan, aiming for his own Featherweight belt in the Oriental Pacific Boxing Federation. When the rest of the world comes knocking, however, will Japan's best fighters rise to the challenge and achieve glory at the top? Or will the small island nation be crushed under the weight of greater entities? This time, champions will become challengers issuing a call to the rest of the world and ready to show off their fighting spirit!",
-        ]);
-
-        DB::table('animes')->insert([//27
             'foto_anime'=>'https://cdn.myanimelist.net/images/anime/1171/109222.jpg',
             'judul_anime'=>'Jujutsu Kaisen',
             'deskripsi_anime'=>"Idly indulging in baseless paranormal activities with the Occult Club, high schooler Yuuji Itadori spends his days at either the clubroom or the hospital, where he visits his bedridden grandfather. However, this leisurely lifestyle soon takes a turn for the strange when he unknowingly encounters a cursed item. Triggering a chain of supernatural occurrences, Yuuji finds himself suddenly thrust into the world of Curses—dreadful beings formed from human malice and negativity—after swallowing the said item, revealed to be a finger belonging to the demon Sukuna Ryoumen, the \"King of Curses.\"

@@ -48,6 +48,7 @@ class CharacterController extends Controller
     {
         try {
             $characters = new Characters;
+            $characters->id_anime = $request->id_anime;
             $characters->id_seiyuu = $request->id_seiyuu;
             $characters->foto_character = $request->foto_character;
             $characters->nama_character = $request->nama_character;
@@ -110,6 +111,7 @@ class CharacterController extends Controller
         try {
             $characters = Characters::find($id);
             if($characters){
+                $characters->id_anime = $request->id_anime;
                 $characters->id_seiyuu = $request->id_seiyuu;
                 $characters->foto_character = $request->foto_character;
                 $characters->nama_character = $request->nama_character;
