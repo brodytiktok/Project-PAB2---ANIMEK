@@ -93,17 +93,19 @@ public interface APIService {
     @POST("character")
     @FormUrlEncoded
     Call<APIResponse<AnimeCharacter>> createAnimeCharacter(@Field("id_seiyuu") long id_seiyuu,
-                                                 @Field("foto_character") String foto_character,
-                                                 @Field("nama_character") String nama_character);
+                                                           @Field("id_anime") long id_anime,
+                                                           @Field("foto_character") String foto_character,
+                                                           @Field("nama_character") String nama_character);
 
     @GET("character/{id}")
     Call<APIResponse<List<AnimeCharacter>>> showAnimeCharacter(@Path("id") long id);
 
     @POST("character/{id}/update")
     @FormUrlEncoded
-    Call<APIResponse<AnimeCharacter>> updateAnimeCharacter(@Field("id_seiyuu") long id_seiyuu,
-                                                 @Field("foto_character") String foto_character,
-                                                 @Field("nama_character") String nama_character);
+    Call<APIResponse<AnimeCharacter>> updateAnimeCharacter(@Field("id_anime") long id_anime,
+                                                           @Field("id_seiyuu") long id_seiyuu,
+                                                           @Field("foto_character") String foto_character,
+                                                           @Field("nama_character") String nama_character);
 
     @GET("character/{id}/delete")
     Call<APIResponse<List<AnimeCharacter>>> deleteAnimeCharacter(@Path("id") long id);
