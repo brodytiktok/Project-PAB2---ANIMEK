@@ -38,7 +38,8 @@ public interface APIService {
 
     @POST("anime/{id}/update")
     @FormUrlEncoded
-    Call<APIResponse<Anime>> updateAnime(@Field("foto_anime") String foto_anime,
+    Call<APIResponse<Anime>> updateAnime(@Path("id") long id,
+                                         @Field("foto_anime") String foto_anime,
                                          @Field("judul_anime") String judul_anime,
                                          @Field("deskripsi_anime") String deskripsi_anime);
 
@@ -59,7 +60,8 @@ public interface APIService {
 
     @POST("genre/{id}/update")
     @FormUrlEncoded
-    Call<APIResponse<Genre>> updateGenre(@Field("nama_genre") String nama_genre);
+    Call<APIResponse<Genre>> updateGenre(@Path("id") long id,
+                                         @Field("nama_genre") String nama_genre);
 
     @GET("genre/{id}/delete")
     Call<APIResponse<List<Genre>>> deleteGenre(@Path("id") long id);
@@ -79,8 +81,9 @@ public interface APIService {
 
     @POST("seiyuu/{id}/update")
     @FormUrlEncoded
-    Call<APIResponse<Seiyuu>> updateSeiyuu(@Field("foto_seiyuu") String foto_seiyuu,
-                                         @Field("nama_seiyuu") String nama_seiyuu);
+    Call<APIResponse<Seiyuu>> updateSeiyuu(@Path("id") long id,
+                                           @Field("foto_seiyuu") String foto_seiyuu,
+                                           @Field("nama_seiyuu") String nama_seiyuu);
 
     @GET("seiyuu/{id}/delete")
     Call<APIResponse<List<Seiyuu>>> deleteSeiyuu(@Path("id") long id);
@@ -102,7 +105,8 @@ public interface APIService {
 
     @POST("character/{id}/update")
     @FormUrlEncoded
-    Call<APIResponse<AnimeCharacter>> updateAnimeCharacter(@Field("id_anime") long id_anime,
+    Call<APIResponse<AnimeCharacter>> updateAnimeCharacter(@Path("id") long id,
+                                                           @Field("id_anime") long id_anime,
                                                            @Field("id_seiyuu") long id_seiyuu,
                                                            @Field("foto_character") String foto_character,
                                                            @Field("nama_character") String nama_character);
@@ -125,8 +129,9 @@ public interface APIService {
 
     @POST("animegenre/{id}/update")
     @FormUrlEncoded
-    Call<APIResponse<AnimeGenre>> updateAnimeGenre(@Field("id_genre") long id_genre,
-                                                 @Field("id_anime") long id_anime);
+    Call<APIResponse<AnimeGenre>> updateAnimeGenre(@Path("id") long id,
+                                                   @Field("id_genre") long id_genre,
+                                                   @Field("id_anime") long id_anime);
 
     @GET("animegenre/{id}/delete")
     Call<APIResponse<List<AnimeGenre>>> deleteAnimeGenre(@Path("id") long id);
