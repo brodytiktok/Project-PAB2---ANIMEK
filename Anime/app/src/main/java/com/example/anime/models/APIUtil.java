@@ -8,7 +8,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIUtil {
-    private static final String API_BASE_URL = "";
+    private static final String API_BASE_URL = "https://listanimeapi.000webhostapp.com/api/";
     private static Retrofit retrofit;
 
     public static Retrofit getRetrofit() {
