@@ -8,7 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.anime.APIService;
 import com.example.anime.R;
+import com.example.anime.model.API.APIResponse;
+import com.example.anime.model.API.APIUtil;
+import com.example.anime.model.API.Anime;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +71,17 @@ public class AnimeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        APIUtil.getRetrofit().create(APIService.class).getAllAnime().enqueue(new Callback<APIResponse<List<Anime>>>() {
+            @Override
+            public void onResponse(Call<APIResponse<List<Anime>>> call, Response<APIResponse<List<Anime>>> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<APIResponse<List<Anime>>> call, Throwable t) {
+
+            }
+        });
         return inflater.inflate(R.layout.fragment_anime, container, false);
     }
 }

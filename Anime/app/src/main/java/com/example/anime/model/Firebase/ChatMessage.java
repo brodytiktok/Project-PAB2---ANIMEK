@@ -1,4 +1,4 @@
-package com.example.anime.models;
+package com.example.anime.model.Firebase;
 
 public class ChatMessage {
     private String id;

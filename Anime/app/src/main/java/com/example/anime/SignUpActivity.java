@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.anime.databinding.ActivitySignUpBinding;
-import com.example.anime.models.User;
+import com.example.anime.model.Firebase.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -35,7 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance();
         mRoot = mDatabase.getReference();
 
-        binding.progressBar.setVisibility(View.GONE);
+
 
         binding.btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,13 +70,13 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
 
-                binding.progressBar.setVisibility(View.VISIBLE);
+
 
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                binding.progressBar.setVisibility(View.GONE);
+
                                 if (task.isSuccessful()) {
                                     Toast.makeText(SignUpActivity.this, "Sign Up successfully!", Toast.LENGTH_SHORT).show();
                                     User user = new User(email, fullName);
@@ -103,13 +103,6 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        binding.btnResetpassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignUpActivity.this, ResetPasswordActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
     }
 }

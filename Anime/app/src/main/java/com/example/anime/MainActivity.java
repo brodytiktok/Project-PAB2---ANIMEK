@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.menu_anime:
                         openFragment(new AnimeFragment());
-                        getActionBar().setTitle("Anime");
+//                        getActionBar().setTitle("Anime");
                         return true;
                     case R.id.menu_forum:
                         openFragment(new ForumFragment());
-                        getActionBar().setTitle("Forum");
+//                        getActionBar().setTitle("Forum");
                         return true;
                 }
                 return false;

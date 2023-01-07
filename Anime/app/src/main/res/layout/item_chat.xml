@@ -1,137 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
+
     <LinearLayout
-        android:id="@+id/ll_receiver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:padding="10dp">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_username"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:layout_marginBottom="8dp">
-
-            <ImageView
-                android:id="@+id/iv_receiver"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginTop="4dp"
-                android:layout_gravity="top"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tv_receiver"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:textStyle="bold"
-                    android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-                <TextView
-                    android:id="@+id/tv_message_receiver"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-                <!--                <io.github.ponnamkarthik.richlinkpreview.RichLinkView-->
-                <!--                    android:id="@+id/tv_link_receiver"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_weight="0"-->
-                <!--                    android:layout_gravity="end"/>-->
-
-                <ImageView
-                    android:id="@+id/iv_message_receiver"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:background="@color/purple_500"
-                    android:scaleType="fitCenter" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_sender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="1dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_comment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|end"
-            android:layout_marginBottom="8dp">
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Masukan Pesan"
+            android:textSize="14dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/dotted"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginHorizontal="8dp">
 
-            <ImageView
-                android:id="@+id/iv_sender"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginTop="4dp"
-                android:layout_gravity="top"
-                android:layout_alignParentEnd="true"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:gravity="center_vertical"
-                android:layout_toStartOf="@+id/iv_sender"
-                android:orientation="vertical">
+                android:text="2022-11-16 20:00:00"
+                android:textSize="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tv_sender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:textStyle="bold"
-                    android:layout_gravity="end"
-                    android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-                <TextView
-                    android:id="@+id/tv_message_sender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:layout_gravity="end"
-                    android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-                <!--                <io.github.ponnamkarthik.richlinkpreview.RichLinkView-->
-                <!--                    android:id="@+id/tv_link_sender"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_weight="0"-->
-                <!--                    android:layout_gravity="end"/>-->
-
-                <ImageView
-                    android:id="@+id/iv_message_sender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:background="@color/purple_500"
-                    android:layout_gravity="end"
-                    android:scaleType="fitCenter" />
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
-</RelativeLayout>
+</androidx.cardview.widget.CardView>

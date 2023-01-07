@@ -1,4 +1,4 @@
-package com.example.anime.models;
+package com.example.anime.model.Firebase;
 
 public class Data {
     private String title;
@@ -35,3 +35,4 @@ public class Data {
         return imageUrl;
     }
 }
+

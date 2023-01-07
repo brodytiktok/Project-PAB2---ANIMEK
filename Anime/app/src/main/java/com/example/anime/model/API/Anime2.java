@@ -1,4 +1,4 @@
-package com.example.anime.models;
+package com.example.anime.model.API;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -9,7 +9,7 @@ public class Anime2 {
     private List<Anime> animes;
 
     @SerializedName("characters")
-    private List<Character> characters;
+    private List<AnimeCharacter> characters;
 
     public Anime2() {
     }
@@ -18,7 +18,7 @@ public class Anime2 {
         return animes;
     }
 
-    public List<Character> getCharacters() {
+    public List<AnimeCharacter> getCharacters() {
         return characters;
     }
 }

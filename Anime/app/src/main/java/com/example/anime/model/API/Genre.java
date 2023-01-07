@@ -1,4 +1,4 @@
-package com.example.anime.models;
+package com.example.anime.model.API;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,6 +1,4 @@
-package com.example.anime.models;
-
-import com.example.anime.APIService;
+package com.example.anime.model.API;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -30,7 +28,5 @@ public class APIUtil {
         return retrofit;
     }
 
-    public static APIService getAPIService() {
-        return getRetrofit().create(APIService.class);
-    }
+
 }

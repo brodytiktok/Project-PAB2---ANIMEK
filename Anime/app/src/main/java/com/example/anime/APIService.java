@@ -1,13 +1,15 @@
 package com.example.anime;
 
-import com.example.anime.models.APIResponse;
-import com.example.anime.models.Anime;
-import com.example.anime.models.AnimeCharacter;
-import com.example.anime.models.AnimeGenre;
-import com.example.anime.models.Genre;
-import com.example.anime.models.Seiyuu;
-import com.example.anime.models.Sender;
-import com.example.anime.models.ViewData;
+import com.example.anime.model.API.APIResponse;
+import com.example.anime.model.API.Anime;
+import com.example.anime.model.API.Anime2;
+import com.example.anime.model.API.AnimeCharacter;
+import com.example.anime.model.API.AnimeGenre;
+import com.example.anime.model.API.AnimeGenre2;
+import com.example.anime.model.API.Genre;
+import com.example.anime.model.API.Seiyuu;
+import com.example.anime.model.Firebase.Sender;
+import com.example.anime.model.Firebase.ViewData;
 
 import java.util.List;
 
@@ -34,7 +36,7 @@ public interface APIService {
                                        @Field("deskripsi_anime") String deskripsi_anime);
 
     @GET("anime/{id}")
-    Call<APIResponse<List<Anime>>> showAnime(@Path("id") long id);
+    Call<APIResponse<List<Anime2>>> showAnime(@Path("id") long id);
 
     @POST("anime/{id}/update")
     @FormUrlEncoded
@@ -122,10 +124,10 @@ public interface APIService {
     @POST("animegenre")
     @FormUrlEncoded
     Call<APIResponse<AnimeGenre>> createAnimeGenre(@Field("id_genre") long id_genre,
-                                                 @Field("id_anime") long id_anime);
+                                                   @Field("id_anime") long id_anime);
 
     @GET("animegenre/{id}")
-    Call<APIResponse<List<AnimeGenre>>> showAnimeGenre(@Path("id") long id);
+    Call<APIResponse<List<AnimeGenre2>>> showAnimeGenre(@Path("id") long id);
 
     @POST("animegenre/{id}/update")
     @FormUrlEncoded

@@ -33,7 +33,7 @@ public class SignInActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance();
         mRoot = mDatabase.getReference();
 
-        binding.progressBar.setVisibility(View.GONE);
+
 
         binding.btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,13 +50,13 @@ public class SignInActivity extends AppCompatActivity {
                     return;
                 }
 
-                binding.progressBar.setVisibility(View.VISIBLE);
+
 
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(SignInActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                binding.progressBar.setVisibility(View.GONE);
+
                                 if (task.isSuccessful()) {
                                     Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                     startActivity(intent);

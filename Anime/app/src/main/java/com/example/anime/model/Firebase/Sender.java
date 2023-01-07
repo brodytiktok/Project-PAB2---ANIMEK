@@ -1,4 +1,4 @@
-package com.example.anime.models;
+package com.example.anime.model.Firebase;
 
 public class Sender {
     private Data data;
@@ -17,3 +17,4 @@ public class Sender {
         return to;
     }
 }
+
