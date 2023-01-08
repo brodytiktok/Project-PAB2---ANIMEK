@@ -1,9 +1,9 @@
-package com.example.anime;
+package com.example.anime.model.FirebaseForum;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Utility {
+public class ForumUtility {
     private static final String BASE_URL = "https://fcm.googleapis.com/";
 
     public static Retrofit mRetrofit;
