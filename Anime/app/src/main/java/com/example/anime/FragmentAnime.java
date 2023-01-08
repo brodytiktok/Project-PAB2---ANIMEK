@@ -12,9 +12,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.anime.adapter.AdapterAnime;
+import com.example.anime.model.API.APIResponse;
+import com.example.anime.model.API.APIUtil;
+import com.example.anime.model.API.Anime;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class FragmentAnime extends Fragment {
 
     RecyclerView recyclerView;
+    private List<Anime> anime = new ArrayList<>();
+    private AdapterAnime adapterAnime;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_anime, container, false);
@@ -26,6 +40,25 @@ public class FragmentAnime extends Fragment {
         recyclerView = view.findViewById(R.id.rv_anime);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        APIService api = APIUtil.getRetrofit().create(APIService.class);
+        api.getAllAnime().enqueue(new Callback<APIResponse<List<Anime>>>() {
+            @Override
+            public void onResponse(Call<APIResponse<List<Anime>>> call, Response<APIResponse<List<Anime>>> response) {
+                if (response.code() == 200) {
+                    int success = response.body().getStatus();
+                    String message = response.body().getMessage();
+                    if (success == 1) {
+                        anime = response.body().getData();
+                        adapterAnime.setAnimeAdapter((APIResponse<List<Anime>>) anime);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<APIResponse<List<Anime>>> call, Throwable t) {
+
+            }
+        });
 
         // retrofit
 
