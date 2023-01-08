@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.CardViewHolder> {
+
     @NonNull
     @Override
     public AdapterAnime.CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
