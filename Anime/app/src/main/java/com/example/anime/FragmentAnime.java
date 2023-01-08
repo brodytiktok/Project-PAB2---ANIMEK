@@ -11,20 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-
-import com.example.anime.adapter.AdapterAnime;
-import com.example.anime.databinding.FragmentAnimeBinding;
-import com.example.anime.model.API.APIResponse;
-import com.example.anime.model.API.APIUtil;
-import com.example.anime.model.API.Anime;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class FragmentAnime extends Fragment {
 

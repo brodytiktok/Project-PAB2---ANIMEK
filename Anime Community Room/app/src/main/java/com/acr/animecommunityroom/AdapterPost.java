@@ -1,22 +1,28 @@
-package com.example.anime.adapter;
+package com.acr.animecommunityroom;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.ViewHolder> {
+import com.acr.animecommunityroom.model.API.Anime;
 
+import java.util.List;
+
+public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_post, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterAnime.ViewHolder holder, int position) {
-        int amn = holder.getAdapterPosition()
+    public void onBindViewHolder(@NonNull AdapterPost.ViewHolder holder, int position) {
+        int pos = holder.getAdapterPosition();
+
     }
 
     @Override
