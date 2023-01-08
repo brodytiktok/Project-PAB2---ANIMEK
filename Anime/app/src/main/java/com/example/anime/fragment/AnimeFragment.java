@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.anime.APIService;
 import com.example.anime.R;
+import com.example.anime.Utility;
 import com.example.anime.model.API.APIResponse;
 import com.example.anime.model.API.APIUtil;
 import com.example.anime.model.API.Anime;
@@ -74,7 +75,18 @@ public class AnimeFragment extends Fragment {
         APIUtil.getRetrofit().create(APIService.class).getAllAnime().enqueue(new Callback<APIResponse<List<Anime>>>() {
             @Override
             public void onResponse(Call<APIResponse<List<Anime>>> call, Response<APIResponse<List<Anime>>> response) {
+                Utility.getmRetrofit().create(APIService.class).getAllAnime().enqueue(new Callback<APIResponse<List<Anime>>>() {
+                    @Override
+                    public void onResponse(Call<APIResponse<List<Anime>>> call, Response<APIResponse<List<Anime>>> response) {
+                        Anime anime = response.body().getData().get(0);
+                        
+                    }
 
+                    @Override
+                    public void onFailure(Call<APIResponse<List<Anime>>> call, Throwable t) {
+
+                    }
+                });
             }
 
             @Override
