@@ -17,32 +17,6 @@ import com.example.anime.model.API.AnimeCharacter;
 
 import java.util.List;
 
-//
-//public class AdapterCharacters extends RecyclerView.Adapter<AdapterCharacters.CardViewHolder> {
-//
-//    @NonNull
-//    @Override
-//    public AdapterCharacters.CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        return null;
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(@NonNull AdapterCharacters.CardViewHolder holder, int position) {
-//
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return 0;
-//    }
-//
-//    public class CardViewHolder extends RecyclerView.ViewHolder {
-//
-//        public CardViewHolder(@NonNull View itemView) {
-//            super(itemView);
-//        }
-//    }
-//}
 public class AdapterCharacters extends RecyclerView.Adapter<AdapterCharacters.ListViewHolder {
     private APIResponse<List<AnimeCharacter>> character;
 
