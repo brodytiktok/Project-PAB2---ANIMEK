@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/ll_signup"
@@ -63,7 +62,7 @@
             android:layout_marginRight="80dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#1E88E5"
-            android:text="Sign Up"
+            android:text="Save"
             android:textColor="@android:color/white"
             android:textSize="12dp" />
 
@@ -74,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:text="Already registered. Login Me!"
+            android:text="Cancel"
             android:textAllCaps="false"
             android:textColor="#E91E63"
             android:textSize="10dp" />
