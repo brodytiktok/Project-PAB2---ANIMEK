@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
+
 public class SignInActivity extends AppCompatActivity {
     private ActivitySignInBinding binding;
     private FirebaseAuth mAuth;

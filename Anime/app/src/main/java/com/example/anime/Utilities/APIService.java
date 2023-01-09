@@ -32,8 +32,8 @@ public interface APIService {
     @POST("anime")
     @FormUrlEncoded
     Call<APIResponse<Anime>> createAnime(@Field("foto_anime") String foto_anime,
-                                       @Field("judul_anime") String judul_anime,
-                                       @Field("deskripsi_anime") String deskripsi_anime);
+                                         @Field("judul_anime") String judul_anime,
+                                         @Field("deskripsi_anime") String deskripsi_anime);
 
     @GET("anime/{id}")
     Call<APIResponse<Anime2>> showAnime(@Path("id") long id);
@@ -76,7 +76,7 @@ public interface APIService {
     @POST("seiyuu")
     @FormUrlEncoded
     Call<APIResponse<Seiyuu>> createSeiyuu(@Field("foto_seiyuu") String foto_seiyuu,
-                                         @Field("nama_seiyuu") String nama_seiyuu);
+                                           @Field("nama_seiyuu") String nama_seiyuu);
 
     @GET("seiyuu/{id}")
     Call<APIResponse<List<Seiyuu>>> showSeiyuu(@Path("id") long id);
