@@ -54,7 +54,7 @@
             android:maxLines="1"
             android:padding="10dp"
             android:textSize="12dp" />
-        
+
         <Button
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
