@@ -1,6 +1,9 @@
 package com.example.anime;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,13 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.example.anime.adapter.AdapterPost;
-import com.example.anime.databinding.ActivityForumBinding;
-import com.example.anime.databinding.FragmentForumBinding;
+
+import com.example.anime.model.API.APIUtil;
 import com.example.anime.model.FirebaseForum.APIForum;
 import com.example.anime.model.FirebaseForum.ForumUtility;
 import com.example.anime.model.FirebaseForum.Post;
@@ -30,16 +29,16 @@ import retrofit2.Response;
 
 public class FragmentForum extends Fragment {
     RecyclerView recyclerView;
-    private ActivityForumBinding binding;
     private AdapterPost adapterPost;
-    private List<Post> data = new ArrayList<>();
+    private List<Post> post = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = ActivityForumBinding.inflate(inflater, container, false);
+        return inflater.inflate(R.layout.fragment_forum, container, false);
+//        binding = ActivityForumBinding.inflate(inflater, container, false);
         // Inflate the layout for this fragment
-        View view = binding.getRoot();
-        return view;
+//        View view = binding.getRoot();
+//        return view;
     }
 
     @Override
@@ -48,18 +47,16 @@ public class FragmentForum extends Fragment {
         recyclerView = view.findViewById(R.id.rv_post);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-    }
-    private void getAllPost(){
-        APIForum apiForum = ForumUtility.getmRetrofit().create(APIForum.class);
-        apiForum.getAllPost().enqueue(new Callback<ValueData<Post>>() {
+        APIForum api = ForumUtility.getmRetrofit().create(APIForum.class);
+        api.getAllPost().enqueue(new Callback<ValueData<Post>>() {
             @Override
             public void onResponse(Call<ValueData<Post>> call, Response<ValueData<Post>> response) {
-                if (response.code() == 200) {
+                if (response.code() ==200){
                     int success = response.body().getSuccess();
                     String message = response.body().getMessage();
-                    if (success == 1) {
-                        data = response.body().getData();
-                        adapterPost.
+                    if (success ==1) {
+                        post = response.body().getData();
+                        adapterPost.setPost((ValueData<List<Post>>) post);
                     }
                 }
             }
@@ -70,5 +67,26 @@ public class FragmentForum extends Fragment {
             }
         });
     }
+//    private void getAllPost(){
+//        APIForum apiForum = ForumUtility.getmRetrofit().create(APIForum.class);
+//        apiForum.getAllPost().enqueue(new Callback<ValueData<Post>>() {
+//            @Override
+//            public void onResponse(Call<ValueData<Post>> call, Response<ValueData<Post>> response) {
+//                if (response.code() == 200) {
+//                    int success = response.body().getSuccess();
+//                    String message = response.body().getMessage();
+//                    if (success == 1) {
+//                        data = response.body().getData();
+//                        adapterPost.
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ValueData<Post>> call, Throwable t) {
+//
+//            }
+//        });
+//    }
 
 }

@@ -63,7 +63,5 @@ public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.ViewHolder> 
             super(binding.getRoot());
             this.binding = binding;
         }
-
-        }
     }
 }

@@ -17,14 +17,13 @@ import com.example.anime.model.API.AnimeCharacter;
 
 import java.util.List;
 
-public class AdapterCharacters extends RecyclerView.Adapter<AdapterCharacters.ListViewHolder {
+public class AdapterCharacters extends RecyclerView.Adapter<AdapterCharacters.ListViewHolder> {
     private APIResponse<List<AnimeCharacter>> character;
 
     public void setCharacter(APIResponse<List<AnimeCharacter>> character) {
         this.character = character;
         notifyDataSetChanged();
     }
-
 
     @NonNull
     @Override
@@ -45,7 +44,6 @@ public class AdapterCharacters extends RecyclerView.Adapter<AdapterCharacters.Li
     public int getItemCount() {
         return character.getData().size();
     }
-
     public class ListViewHolder extends  RecyclerView.ViewHolder{
         private ListCharactersBinding binding;
         public ListViewHolder(@NonNull ListCharactersBinding binding) {
