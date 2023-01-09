@@ -5,23 +5,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.anime.Utilities.ItemClickListener;
 import com.example.anime.databinding.ListAnimeBinding;
+import com.example.anime.databinding.ListCharactersBinding;
 import com.example.anime.model.API.APIResponse;
 import com.example.anime.model.API.Anime;
+import com.example.anime.model.API.AnimeCharacter;
 
 import java.util.List;
 
-public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.ViewHolder> {
+public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.CardViewHolder> {
     private APIResponse<List<Anime>> anime;
     private ItemClickListener<Anime> itemClickListener;
 
-    public interface ItemClickListener<T> {
-        void itemClick(T data, int position);
-    }
     public AdapterAnime(ItemClickListener<Anime> itemClickListener) {
         this.itemClickListener = itemClickListener;
     }
@@ -33,12 +32,12 @@ public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.ViewHolder> 
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(ListAnimeBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+    public AdapterAnime.CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new CardViewHolder(ListAnimeBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterAnime.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterAnime.CardViewHolder holder, int position) {
         Anime result = anime.getData().get(position);
         holder.binding.tvAnime.setText("Anime : "+ result.getJudul_anime());
         Glide.with(holder.itemView.getContext())
@@ -57,9 +56,10 @@ public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.ViewHolder> 
         return anime.getData().size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class CardViewHolder extends RecyclerView.ViewHolder {
         private ListAnimeBinding binding;
-        public ViewHolder(@NonNull ListAnimeBinding binding) {
+
+        public CardViewHolder(@NonNull ListAnimeBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

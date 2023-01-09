@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentForum">
+    tools:context=".fragments.ForumFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -15,6 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
+        android:text="Forum"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +26,7 @@
         android:id="@+id/rv_post"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:listitem="@layout/item_chat"
+        tools:listitem="@layout/item_chat_2"
         tools:itemCount="20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

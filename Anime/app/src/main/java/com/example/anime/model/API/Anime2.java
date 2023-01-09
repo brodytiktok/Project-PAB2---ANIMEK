@@ -9,7 +9,7 @@ public class Anime2 {
     private List<Anime> animes;
 
     @SerializedName("characters")
-    private List<AnimeCharacter> characters;
+    private List<AnimeCharacter2> characters;
 
     public Anime2() {
     }
@@ -18,7 +18,7 @@ public class Anime2 {
         return animes;
     }
 
-    public List<AnimeCharacter> getCharacters() {
+    public List<AnimeCharacter2> getCharacters() {
         return characters;
     }
 }
