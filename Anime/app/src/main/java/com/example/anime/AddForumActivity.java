@@ -30,7 +30,7 @@ public class AddForumActivity extends AppCompatActivity {
                     goPost = false;
                     binding.etContent.setError("Forum Tidak Boleh Kosong!");
                 } if (goPost) {
-
+                    
                 }
             }
         });
