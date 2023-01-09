@@ -13,6 +13,5 @@ public class AddForumActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_forum);
 
-
     }
 }
