@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home"
+    <item
         android:icon="@drawable/ic_animestudio"
         android:id="@+id/bnm_item_home"/>
-    <item android:title="Forum"
+    <item
         android:icon="@drawable/ic_forum"
         android:id="@+id/bnm_item_forum"/>
-    <item android:title="Profile"
+    <item
         android:icon="@drawable/ic_baseline_person_24"
         android:id="@+id/bnm_item_profile"/>
 

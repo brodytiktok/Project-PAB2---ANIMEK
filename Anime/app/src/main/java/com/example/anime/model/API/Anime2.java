@@ -2,11 +2,12 @@ package com.example.anime.model.API;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Anime2 {
     @SerializedName("animes")
-    private List<Anime> animes;
+    private Anime animes;
 
     @SerializedName("characters")
     private List<AnimeCharacter2> characters;
@@ -14,7 +15,7 @@ public class Anime2 {
     public Anime2() {
     }
 
-    public List<Anime> getAnimes() {
+    public Anime getAnimes() {
         return animes;
     }
 

@@ -18,10 +18,12 @@ import com.example.anime.Utilities.APIService;
 import com.example.anime.Utilities.APIUtil;
 import com.example.anime.Utilities.ItemClickListener;
 import com.example.anime.activites.Anime_Detail;
+import com.example.anime.activites.MainActivity;
 import com.example.anime.adapter.AdapterAnime;
 import com.example.anime.databinding.FragmentAnimeBinding;
 import com.example.anime.model.API.APIResponse;
 import com.example.anime.model.API.Anime;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -56,7 +58,7 @@ public class AnimeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
+        Log.d("TAG", "onResume ================================================================: "+FirebaseDatabase.getInstance().getReference());
         APIUtil.getRetrofit().create(APIService.class).getAllAnime().enqueue(new Callback<APIResponse<List<Anime>>>() {
             @Override
             public void onResponse(Call<APIResponse<List<Anime>>> call, Response<APIResponse<List<Anime>>> response) {

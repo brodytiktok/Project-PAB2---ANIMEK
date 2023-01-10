@@ -4,13 +4,13 @@ import com.example.anime.model.API.APIResponse;
 import com.example.anime.model.API.Anime;
 import com.example.anime.model.API.Anime2;
 import com.example.anime.model.API.AnimeCharacter;
+import com.example.anime.model.API.AnimeCharacter2;
 import com.example.anime.model.API.AnimeGenre;
 import com.example.anime.model.API.AnimeGenre2;
 import com.example.anime.model.API.Genre;
 import com.example.anime.model.API.Seiyuu;
-import com.example.anime.model.Firebase.Sender;
-import com.example.anime.model.Firebase.ViewData;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -20,11 +20,8 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface APIService {
-    @POST("fcm/send")
-    Call<ViewData> sendNotification(@Body Sender body);
 
     @GET("anime")
     Call<APIResponse<List<Anime>>> getAllAnime();
@@ -32,8 +29,8 @@ public interface APIService {
     @POST("anime")
     @FormUrlEncoded
     Call<APIResponse<Anime>> createAnime(@Field("foto_anime") String foto_anime,
-                                         @Field("judul_anime") String judul_anime,
-                                         @Field("deskripsi_anime") String deskripsi_anime);
+                                       @Field("judul_anime") String judul_anime,
+                                       @Field("deskripsi_anime") String deskripsi_anime);
 
     @GET("anime/{id}")
     Call<APIResponse<Anime2>> showAnime(@Path("id") long id);
@@ -76,7 +73,7 @@ public interface APIService {
     @POST("seiyuu")
     @FormUrlEncoded
     Call<APIResponse<Seiyuu>> createSeiyuu(@Field("foto_seiyuu") String foto_seiyuu,
-                                           @Field("nama_seiyuu") String nama_seiyuu);
+                                         @Field("nama_seiyuu") String nama_seiyuu);
 
     @GET("seiyuu/{id}")
     Call<APIResponse<List<Seiyuu>>> showSeiyuu(@Path("id") long id);

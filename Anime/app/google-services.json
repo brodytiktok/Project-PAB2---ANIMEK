@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "717017025335",
-    "project_id": "test-project-list",
-    "storage_bucket": "test-project-list.appspot.com"
+    "project_number": "166854099248",
+    "firebase_url": "https://animekomunity-default-rtdb.firebaseio.com",
+    "project_id": "animekomunity",
+    "storage_bucket": "animekomunity.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:717017025335:android:7556fa7495131b566fe8b2",
+        "mobilesdk_app_id": "1:166854099248:android:56a04a4df50ebf83b448f5",
         "android_client_info": {
           "package_name": "com.example.anime"
         }
       },
       "oauth_client": [
         {
-          "client_id": "717017025335-h1loud7a0jreh5k1fnv51ugcqod7067q.apps.googleusercontent.com",
+          "client_id": "166854099248-gu48p7vt1nta2s2rku7b5lbftohji56q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDY4KAXF-EwKnbv3z2jbVuqo8LXW7O5jy8"
+          "current_key": "AIzaSyCuT2EzQ0-mQDjs2xrebQDslQErj3M_ggA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "717017025335-h1loud7a0jreh5k1fnv51ugcqod7067q.apps.googleusercontent.com",
+              "client_id": "166854099248-gu48p7vt1nta2s2rku7b5lbftohji56q.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

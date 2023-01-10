@@ -19,8 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Content Post"
-            android:inputType="none"
-            android:maxLength="180"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -29,12 +27,13 @@
         android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Add Post"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
         android:layout_below="@id/til_content"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="16dp"
-        android:background="@color/black"
-        android:text="Add Post"
-        android:textColor="@color/white" />
+        />
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -2,7 +2,7 @@ package com.example.anime.model.API;
 
 public class APIResponse<T> {
     private int status;
-    private String message;
+    private String pesan;
     private T data;
 
     public int getStatus() {
@@ -10,7 +10,7 @@ public class APIResponse<T> {
     }
 
     public String getMessage() {
-        return message;
+        return pesan;
     }
 
     public T getData() {

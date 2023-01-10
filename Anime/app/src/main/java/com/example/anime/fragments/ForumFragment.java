@@ -9,17 +9,23 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.anime.activites.AddForumActivity;
 import com.example.anime.adapter.AdapterForum;
 import com.example.anime.databinding.FragmentForumBinding;
 import com.example.anime.model.Firebase.Forum;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ForumFragment extends Fragment {
 
@@ -52,6 +58,9 @@ public class ForumFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mBase = FirebaseDatabase.getInstance().getReference();
+        rv = binding.rvPost;
+        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+
 
         binding.fabInput.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,27 +70,28 @@ public class ForumFragment extends Fragment {
             }
         });
 
-        rv = binding.rvPost;
-        rv.setLayoutManager(new LinearLayoutManager(getContext()));
-
         FirebaseRecyclerOptions<Forum> options =
                 new FirebaseRecyclerOptions.Builder<Forum>()
-                        .setQuery(mBase, Forum.class)
+                        .setQuery(mBase.child("forum"), Forum.class)
                         .build();
+
         adapter = new AdapterForum(options);
         rv.setAdapter(adapter);
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
         adapter.startListening();
+
     }
 
     @Override
     public void onPause() {
         super.onPause();
         adapter.stopListening();
-    }
 
+
+    }
 }
